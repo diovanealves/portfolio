@@ -1,4 +1,5 @@
 ---
+import CardProject from "@/components/cardProject.astro";
 import { projectQuery } from "@/graphql/project.query";
 import { getLangFromUrl } from "@/i18n/utils";
 import Layout from "@/layouts/Layout.astro";
@@ -17,16 +18,27 @@ const projects: Project[] = json.data.projects;
 
 <Layout title="Projetos">
   <main>
-    {
-      projects ? (
-        projects.map((project) => (
-          <div accesskey={project.title}>
-            <h1>{project.description}</h1>
-          </div>
-        ))
-      ) : (
-        <p>Nenhum projeto disponível.</p>
-      )
-    }
+    <h1 class="mb-4 text-2xl font-bold">Meus Projetos</h1>
+    <div
+      class="grid grid-cols-1 place-items-center gap-6 md:grid-cols-2 xl:grid-cols-4"
+    >
+      {
+        projects ? (
+          projects.map((project, index) => (
+            <CardProject
+              index={index}
+              title={project.title}
+              description={project.description}
+              websiteUrl={project.projectWebsite}
+              githubUrl={project.githubRepository}
+              imageUrl={project.linkImage}
+              usedLanguages={project.usedLanguages}
+            />
+          ))
+        ) : (
+          <p>Nenhum projeto disponível.</p>
+        )
+      }
+    </div>
   </main>
 </Layout>
