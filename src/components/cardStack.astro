@@ -1,13 +1,15 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
-  image: string;
+  image: ImageMetadata;
   title: string;
   href: string;
   classname?: string;
-  loading: "eager" | "lazy";
+  index: number;
 }
 
-const { image, title, href, classname, loading } = Astro.props;
+const { image, title, href, classname, index } = Astro.props;
 ---
 
 <div
@@ -20,12 +22,12 @@ const { image, title, href, classname, loading } = Astro.props;
     aria-label={`Link para a documentação da tecnologia ${title}`}
     class="space-y-2 transition-all hover:scale-105"
   >
-    <img
+    <Image
       src={image}
-      alt={`Logo do(a) ${title}`}
+      alt={title}
       width="32"
       height="32"
-      loading={loading}
+      loading={index < 9 ? "eager" : "lazy"}
       class={`mx-auto h-8 w-8 ${classname}`}
     />
     <h1 class="">{title}</h1>

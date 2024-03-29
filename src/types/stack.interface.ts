@@ -1,7 +1,6 @@
 export interface stackProps {
-  image: string;
+  image: ImageMetadata;
   title: string;
   href: string;
   classname?: string;
-  loading: "eager" | "lazy";
 }
