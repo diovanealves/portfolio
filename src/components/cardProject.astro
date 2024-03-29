@@ -1,4 +1,5 @@
 ---
+import { useTranslations } from "@/i18n/utils";
 import { Image } from "astro:assets";
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
   usedLanguages: string[];
   websiteUrl: string;
   githubUrl: string;
+  language: "pt-br" | "en";
 }
 
 const {
@@ -19,10 +21,13 @@ const {
   websiteUrl,
   githubUrl,
   usedLanguages,
+  language,
 } = Astro.props;
+
+const t = useTranslations(language);
 ---
 
-<div class="flex w-full max-w-md flex-col rounded-b-lg bg-secondary">
+<div class="grid w-full max-w-md grid-rows-2 rounded-b-lg bg-secondary">
   <Image
     src={imageUrl}
     alt={title}
@@ -33,14 +38,10 @@ const {
   />
   <div class="flex flex-1 flex-col justify-around gap-1 p-3">
     <h1 class="text-lg font-bold leading-relaxed">{title}</h1>
-    <p class="h-20 text-base">
-      {
-        description.length > 100
-          ? description.slice(0, 100) + "..."
-          : description
-      }
+    <p class="h-16 text-base">
+      {description.length > 90 ? description.slice(0, 90) + "..." : description}
     </p>
-    <p class="font-medium">
+    <p class="mt-2 text-sm font-medium">
       {usedLanguages}
     </p>
     <div class="flex items-center justify-between">
@@ -49,14 +50,14 @@ const {
         target="_blank"
         rel="noopener noreferrer"
         class="cursor-pointer font-medium text-primary transition-colors hover:text-ring"
-        >Visitar Página</a
+        >{t("project.website")}</a
       >
       <a
         href={githubUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="cursor-pointer font-medium text-primary transition-colors hover:text-ring"
-        >Ver no GitHub</a
+        >{t("project.github")}</a
       >
     </div>
   </div>

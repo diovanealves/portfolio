@@ -16,7 +16,7 @@ const json = await response.json();
 const projects: Project[] = json.data.projects;
 ---
 
-<Layout title="Projetos">
+<Layout title="Projects">
   <main>
     <h1 class="mb-4 text-2xl font-bold">My projects</h1>
     <div
@@ -33,10 +33,11 @@ const projects: Project[] = json.data.projects;
               githubUrl={project.githubRepository}
               imageUrl={project.linkImage}
               usedLanguages={project.usedLanguages}
+              language={lang}
             />
           ))
         ) : (
-          <p>Nenhum projeto disponível.</p>
+          <p>No project available.</p>
         )
       }
     </div>

@@ -17,6 +17,8 @@ export const ui = {
     "command.project": "My Projects",
     "command.stack": "Technologies and Tools",
     "command.e-mail": "Send E-mail",
+    "project.website": "Visit Website",
+    "project.github": "View on Github",
   },
   "pt-br": {
     "theme.toggle": "Alterar tema",
@@ -29,5 +31,7 @@ export const ui = {
     "command.project": "Meus Projetos",
     "command.stack": "Tecnologias e Ferramentas",
     "command.e-mail": "Enviar E-mail",
+    "project.website": "Visite o Website",
+    "project.github": "Veja no Github",
   },
 } as const;
