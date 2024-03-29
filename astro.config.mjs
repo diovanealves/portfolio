@@ -1,5 +1,6 @@
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
+import { defineConfig, squooshImageService } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,5 +18,8 @@ export default defineConfig({
   },
   redirects: {
     "/": "/en",
+  },
+  image: {
+    service: squooshImageService(),
   },
 });
