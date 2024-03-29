@@ -2,24 +2,24 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig, squooshImageService } from "astro/config";
 
-import vercel from "@astrojs/vercel/serverless";
-
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), (await import("astro-compress")).default()],
+  integrations: [
+    tailwind(),
+    react(),
+    (await import("astro-compress")).default(),
+  ],
   i18n: {
     defaultLocale: "en",
     locales: ["en", "pt-br"],
     routing: {
-      prefixDefaultLocale: true
-    }
+      prefixDefaultLocale: true,
+    },
   },
   redirects: {
-    "/": "/en"
+    "/": "/en",
   },
   image: {
-    service: squooshImageService()
+    service: squooshImageService(),
   },
-  output: "server",
-  adapter: vercel()
 });
