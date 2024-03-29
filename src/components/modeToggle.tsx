@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react";
+import { Settings } from "lucide-react";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
@@ -6,11 +6,18 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useTranslations } from "@/i18n/utils";
 
-export function ModeToggle({ language }: { language: "pt-br" | "en" }) {
+export function ModeToggle({
+  language,
+  currentUserURL,
+}: {
+  language: "pt-br" | "en";
+  currentUserURL: string;
+}) {
   const t = useTranslations(language);
   const [theme, setThemeState] = React.useState<
     "theme-light" | "dark" | "system"
@@ -33,20 +40,32 @@ export function ModeToggle({ language }: { language: "pt-br" | "en" }) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">{t("theme.toggle")}</span>
+          <Settings className="h-[1.2rem] w-[1.2rem] transition-all hover:animate-spin" />
+          <span className="sr-only">{t("settings.toggle")}</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
+        <h1 className="my-1 text-center font-medium">{t("settings.theme")}</h1>
         <DropdownMenuItem onClick={() => setThemeState("theme-light")}>
-          {t("theme.light")}
+          {t("settings.light")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setThemeState("dark")}>
-          {t("theme.dark")}
+          {t("settings.dark")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setThemeState("system")}>
-          {t("theme.system")}
+          {t("settings.system")}
+        </DropdownMenuItem>
+
+        <DropdownMenuSeparator className="my-2" />
+
+        <h1 className="my-1 text-center font-medium">
+          {t("settings.language")}
+        </h1>
+        <DropdownMenuItem>
+          <a href={`/en/${currentUserURL}`}>{t("settings.english")}</a>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <a href={`/pt-br/${currentUserURL}`}>{t("settings.pt-br")}</a>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

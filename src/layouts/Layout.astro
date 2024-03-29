@@ -10,6 +10,7 @@ interface Props {
 
 const { title } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const currentUserURL = Astro.url.pathname.split("/")[2];
 ---
 
 <script is:inline>
@@ -48,7 +49,7 @@ const lang = getLangFromUrl(Astro.url);
   <body>
     <div class="z-10 flex justify-end gap-2 p-3">
       <CommandMenu language={lang} client:load />
-      <ModeToggle language={lang} client:load />
+      <ModeToggle language={lang} currentUserURL={currentUserURL} client:load />
     </div>
     <slot />
   </body>
