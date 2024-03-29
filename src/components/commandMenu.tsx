@@ -6,7 +6,7 @@ import {
   CommandList,
 } from "@/components/ui/command";
 import { useTranslations } from "@/i18n/utils";
-import { ArrowRight, Command, Computer, Home, Mail, Star } from "lucide-react";
+import { ArrowRight, Command, Computer, Home, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 
@@ -43,32 +43,40 @@ export function CommandMenu({ language }: { language: "pt-br" | "en" }) {
         <CommandList>
           <CommandEmpty>{t("command.empty")}</CommandEmpty>
           <CommandItem className="justify-between">
-            <div className="flex items-center">
-              <Home className="mr-2 h-4 w-4" />
-              <span>{t("command.home")}</span>
-            </div>
-            <ArrowRight />
+            <a
+              href={`/${language}/`}
+              className="flex w-full items-center justify-between"
+            >
+              <div className="flex items-center">
+                <Home className="mr-2 h-4 w-4" />
+                <span>{t("command.home")}</span>
+              </div>
+              <ArrowRight />
+            </a>
           </CommandItem>
           <CommandItem className="justify-between">
-            <div className="flex items-center">
-              <Star className="mr-2 h-4 w-4" />
-              <span>{t("command.project")}</span>
-            </div>
-            <ArrowRight />
+            <a
+              href={`/${language}/project`}
+              className="flex w-full items-center justify-between"
+            >
+              <div className="flex items-center">
+                <Star className="mr-2 h-4 w-4" />
+                <span>{t("command.project")}</span>
+              </div>
+              <ArrowRight />
+            </a>
           </CommandItem>
           <CommandItem className="justify-between">
-            <div className="flex items-center">
-              <Computer className="mr-2 h-4 w-4" />
-              <span>{t("command.stack")}</span>
-            </div>
-            <ArrowRight />
-          </CommandItem>
-          <CommandItem className="justify-between">
-            <div className="flex items-center">
-              <Mail className="mr-2 h-4 w-4" />
-              <span>{t("command.e-mail")}</span>
-            </div>
-            <ArrowRight />
+            <a
+              href={`/${language}/stack`}
+              className="flex w-full items-center justify-between"
+            >
+              <div className="flex items-center">
+                <Computer className="mr-2 h-4 w-4" />
+                <span>{t("command.stack")}</span>
+              </div>
+              <ArrowRight />
+            </a>
           </CommandItem>
         </CommandList>
       </CommandDialog>

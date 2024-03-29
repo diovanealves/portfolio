@@ -1,9 +1,12 @@
 ---
 import Jobs from "@/components/jobs.astro";
 import Link from "@/components/link.astro";
+import { getLangFromUrl } from "@/i18n/utils";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import { Download, Github, Linkedin, Twitter } from "lucide-react";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <Layout title="Diovane Alves">
@@ -85,7 +88,7 @@ import { Download, Github, Linkedin, Twitter } from "lucide-react";
       <div class="flex items-center justify-between">
         <h1 class="text-2xl font-bold">Meus projetos</h1>
         <a
-          href="#"
+          href={`/${lang}/project`}
           rel="noopener noreferrer"
           class="over:scale-105 font-semibold text-primary transition-opacity hover:underline hover:opacity-65"
           >Veja todos os projetos</a
