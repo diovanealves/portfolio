@@ -16,4 +16,7 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  redirects: {
+    "/": "/en",
+  },
 });
