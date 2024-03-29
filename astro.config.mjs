@@ -18,7 +18,7 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
-  output: "server",
+  output: "hybrid",
   adapter: vercel({
     webAnalytics: {
       enabled: true,
