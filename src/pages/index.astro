@@ -1,3 +1,12 @@
 ---
+const acceptLanguage = Astro.request.headers.get("accept-language");
+const preferredLanguage = acceptLanguage
+  ? acceptLanguage.split(",")[0].trim()
+  : "";
 
+let redirectTo = preferredLanguage === "pt-br" ? "/pt-br" : "/en";
+
+if (Astro.url.pathname === "/") {
+  Astro.redirect(redirectTo);
+}
 ---
