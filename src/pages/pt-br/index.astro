@@ -2,6 +2,7 @@
 import CardProject from "@/components/cardProject.astro";
 import Jobs from "@/components/jobs.astro";
 import Link from "@/components/link.astro";
+import CvDiovaneAlves from "@/data/CV-DiovaneAlves.pdf";
 import { getLangFromUrl } from "@/i18n/utils";
 import Layout from "@/layouts/Layout.astro";
 import fetchProjects from "@/service/project.service";
@@ -37,7 +38,7 @@ const projects: Project[] = await fetchProjects({ language: langFormatted });
 
         <div class="flex items-center gap-4">
           <a
-            href="./CV-DiovaneAlves.pdf"
+            href={CvDiovaneAlves}
             download="CV-DiovaneAlves.pdf"
             class="flex w-8/12 max-w-60 items-center justify-center gap-2 rounded-lg bg-primary py-2 font-medium text-white transition-all hover:scale-105 hover:opacity-85"
           >
