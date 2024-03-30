@@ -1,5 +1,5 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  readonly HYGRAPH_API: string;
+  readonly HYGRAPH_ENDPOINT: string;
 }
