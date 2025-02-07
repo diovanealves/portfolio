@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { t } = useI18n();
+</script>
+
 <template>
   <header class="flex items-start justify-between">
     <div>
@@ -8,9 +12,7 @@
         Diovane Alves
       </h1>
       <p class="max-w-2xl text-xl text-gray-700 dark:text-gray-300">
-        Desenvolvedor Full Stack apaixonado por transformar ideias em
-        experiências digitais memoráveis. Com um olhar aguçado para design e
-        performance, crio soluções que não só funcionam, mas encantam.
+        {{ t("hero.description") }}
       </p>
 
       <a
@@ -20,7 +22,7 @@
         class="mt-3 inline-flex items-center gap-2 rounded-lg bg-gray-100 px-4 py-2 text-gray-900 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
       >
         <Icon name="lucide:download" class="h-5 w-5" />
-        Baixar Currículo
+        {{ t("hero.curriculum") }}
       </a>
     </div>
 
