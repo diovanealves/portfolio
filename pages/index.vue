@@ -1,7 +1,27 @@
 <script setup lang="ts">
-const { locale, t } = useI18n();
+const { locale } = useI18n();
+
+useHead({
+  title: "Diovane Alves",
+  htmlAttrs: {
+    lang: locale.value,
+  },
+  meta: [
+    {
+      name: "description",
+      content:
+        "Desenvolvedor Full Stack apaixonado por transformar ideias em experiências digitais memoráveis. Especializado em soluções web de alta performance.",
+    },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+    },
+  ],
+});
 </script>
 
 <template>
-  <h1>{{ t("welcome") }}</h1>
+  <main class="mx-auto mt-12 w-11/12 max-w-5xl px-4">
+    <HeroSection />
+  </main>
 </template>
