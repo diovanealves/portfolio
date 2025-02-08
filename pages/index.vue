@@ -17,6 +17,7 @@ useHead({
       content: "width=device-width, initial-scale=1",
     },
     {
+      hid: "robots",
       name: "robots",
       content: "index, follow",
     },
@@ -27,5 +28,7 @@ useHead({
 <template>
   <main class="mx-auto mt-12 w-11/12 max-w-5xl px-4">
     <HeroSection />
+
+    <AboutMe />
   </main>
 </template>
