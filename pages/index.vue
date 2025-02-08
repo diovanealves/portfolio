@@ -29,6 +29,8 @@ useHead({
   <main class="mx-auto mt-12 w-11/12 max-w-5xl px-4">
     <HeroSection />
 
-    <AboutMe />
+    <div class="mt-10">
+      <AboutMe />
+    </div>
   </main>
 </template>

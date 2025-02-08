@@ -1,5 +1,10 @@
 {
   "hero.available": "Disponível para projetos",
   "hero.description": "Desenvolvedor Full Stack apaixonado por transformar ideias em experiências digitais memoráveis. Com um olhar aguçado para design e performance, crio soluções que não só funcionam, mas encantam.",
-  "hero.curriculum": "Baixar currículo"
+  "hero.curriculum": "Baixar currículo",
+
+  "about.title": "Sobre Mim",
+  "about.description.first": "Com mais de 3 anos de experiência no desenvolvimento web, especializei-me em criar aplicações robustas e escaláveis. Minha jornada começou com uma paixão por resolver problemas complexos e evoluiu para uma carreira dedicada a construir experiências digitais excepcionais.",
+  "about.description.second": "Atualmente, sou desenvolvedor full stack, com foco principal na criação de soluções web de alta performance. Tenho experiência em tecnologias como Vue.js, React, Node.js, Java e Tailwind CSS, entre outras.",
+  "about.description.third": "Sou um eterno aprendiz, sempre atento às últimas tendências e melhores práticas do setor. Acredito no poder da tecnologia para transformar negócios e vidas, e essa é minha maior motivação diária."
 }

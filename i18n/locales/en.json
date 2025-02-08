@@ -1,5 +1,10 @@
 {
   "hero.available": "Available for projects",
   "hero.description": "Full Stack Developer passionate about transforming ideas into memorable digital experiences. With a keen eye for design and performance, I create solutions that not only work, but delight",
-  "hero.curriculum": "Download my resume"
+  "hero.curriculum": "Download my resume",
+
+  "about.title": "About me",
+  "about.description.first": "With over 3 years of experience in web development, I specialized in creating robust and scalable applications. My journey began with a passion for solving complex problems and evolved into a career dedicated to building exceptional digital experiences.",
+  "about.description.second": "Currently, I am a full stack developer, with a primary focus on creating high-performance web solutions. I have experience with technologies such as Vue.js, React, React-Native, Node.js and Java, among others.",
+  "about.description.third": "I am a lifelong learner, always attentive to the latest trends and best practices in the industry. I believe in the power of technology to transform businesses and lives, and this is my greatest daily motivation."
 }
