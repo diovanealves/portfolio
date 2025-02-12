@@ -1,14 +1,21 @@
 <script setup lang="ts">
-const props = defineProps<{ to: string; title: string }>();
+import { NuxtLink } from "#components";
+
+const props = defineProps<{ to?: string; title: string }>();
 const { locale } = useI18n();
 
 const computedPath = computed(() => {
-  return `/${locale.value}${props.to}`;
+  return props.to ? `/${locale.value}${props.to}` : null;
 });
 </script>
 
 <template>
-  <NuxtLink :to="computedPath" :aria-label="title" role="link">
+  <component
+    :is="computedPath ? NuxtLink : 'div'"
+    :to="computedPath"
+    :aria-label="title"
+    role="link"
+  >
     <div
       class="group relative z-0 block cursor-pointer overflow-hidden border border-blue-100/20 bg-gradient-to-b from-white to-blue-50/50 shadow-sm backdrop-blur-sm transition-all duration-300 hover:shadow-md dark:from-zinc-900 dark:to-blue-950/20"
     >
@@ -31,6 +38,7 @@ const computedPath = computed(() => {
             </h2>
           </div>
           <Icon
+            v-if="computedPath"
             name="lucide:move-up-right"
             class="my-auto flex transform items-center text-blue-500 opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100"
             size="20"
@@ -45,5 +53,5 @@ const computedPath = computed(() => {
         class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/10 to-transparent"
       />
     </div>
-  </NuxtLink>
+  </component>
 </template>

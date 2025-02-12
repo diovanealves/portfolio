@@ -30,7 +30,10 @@ useHead({
     <HeroSection />
 
     <div class="mt-10">
-      <AboutMe />
+      <div class="grid gap-3 lg:grid-cols-[75%,25%]">
+        <AboutMe />
+        <SocialLinks />
+      </div>
     </div>
   </main>
 </template>
